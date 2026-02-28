@@ -208,12 +208,12 @@ export default function Penjualan() {
                 <th className="p-4 font-medium">Status & Sumber</th>
                 <th className="p-4 font-medium text-right">Total</th>
                 <th className="p-4 font-medium text-center">Pembayaran</th>
-                <th className="p-4 font-medium text-right">Aksi</th>
+                <th className="p-4 font-medium text-right sticky right-0 bg-slate-50 shadow-[-4px_0_10px_rgba(0,0,0,0.05)]">Aksi</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
               {filteredSalesHistory.slice().reverse().map((sale) => (
-                <tr key={sale.id} className="hover:bg-slate-50/50 transition-colors">
+                <tr key={sale.id} className="group hover:bg-slate-50/50 transition-colors">
                   <td className="p-4 text-slate-600">
                     {format(new Date(sale.date), 'dd MMM yyyy, HH:mm', { locale: id })}
                   </td>
@@ -240,7 +240,7 @@ export default function Penjualan() {
                       {sale.paymentMethod}
                     </span>
                   </td>
-                  <td className="p-4 text-right">
+                  <td className="p-4 text-right sticky right-0 bg-white shadow-[-4px_0_10px_rgba(0,0,0,0.05)] group-hover:bg-slate-50/50 transition-colors">
                     <div className="flex flex-col items-end gap-2">
                       <div className="flex gap-2">
                         <button 
@@ -550,7 +550,7 @@ export default function Penjualan() {
 
       {/* Delete Confirm Modal */}
       {deleteConfirmId && (
-        <div className="fixed inset-0 bg-slate-900/50 flex items-center justify-center z-50 p-4">
+        <div className="fixed inset-0 bg-slate-900/50 flex items-center justify-center z-[100] p-4">
           <div className="bg-white rounded-2xl p-6 max-w-sm w-full">
             <h3 className="text-lg font-bold text-slate-900 mb-2">Konfirmasi Hapus</h3>
             <p className="text-slate-600 mb-6">Apakah Anda yakin ingin menghapus transaksi ini? Stok produk akan dikembalikan.</p>
@@ -572,7 +572,7 @@ export default function Penjualan() {
 
       {/* Complete Confirm Modal */}
       {completeConfirmId && (
-        <div className="fixed inset-0 bg-slate-900/50 flex items-center justify-center z-50 p-4">
+        <div className="fixed inset-0 bg-slate-900/50 flex items-center justify-center z-[100] p-4">
           <div className="bg-white rounded-2xl p-6 max-w-sm w-full">
             <h3 className="text-lg font-bold text-slate-900 mb-2">Selesaikan Pesanan</h3>
             <p className="text-slate-600 mb-6">Tandai pesanan ini sebagai Selesai? Stok produk akan dikurangi.</p>
