@@ -179,8 +179,8 @@ export default function Produksi() {
 
       {/* Add Production Modal */}
       {showAddModal && (
-        <div className="fixed inset-0 bg-slate-900/50 flex items-center justify-center z-50 p-4 overflow-y-auto">
-          <div className="bg-white rounded-2xl w-full max-w-lg overflow-hidden my-8">
+        <div className="fixed inset-0 bg-slate-900/50 flex items-start md:items-center justify-center z-[100] p-4 overflow-y-auto">
+          <div className="bg-white rounded-2xl w-full max-w-lg overflow-hidden my-auto md:my-8 shrink-0">
             <div className="p-6 border-b border-slate-100">
               <h2 className="text-xl font-bold text-slate-900">Catat Produksi Baru</h2>
             </div>

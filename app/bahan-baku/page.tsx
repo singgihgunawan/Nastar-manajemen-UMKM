@@ -305,8 +305,8 @@ export default function BahanBaku() {
 
       {/* Add Material Modal */}
       {showAddModal && (
-        <div className="fixed inset-0 bg-slate-900/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl w-full max-w-md overflow-hidden">
+        <div className="fixed inset-0 bg-slate-900/50 flex items-start md:items-center justify-center z-[100] p-4 overflow-y-auto">
+          <div className="bg-white rounded-2xl w-full max-w-md overflow-hidden my-auto shrink-0">
             <div className="p-6 border-b border-slate-100">
               <h2 className="text-xl font-bold text-slate-900">{editingMaterialId ? 'Edit Bahan Baku' : 'Tambah Bahan Baku'}</h2>
             </div>
@@ -352,8 +352,8 @@ export default function BahanBaku() {
 
       {/* Transaction Modal */}
       {showTransactionModal && (
-        <div className="fixed inset-0 bg-slate-900/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl w-full max-w-md overflow-hidden">
+        <div className="fixed inset-0 bg-slate-900/50 flex items-start md:items-center justify-center z-[100] p-4 overflow-y-auto">
+          <div className="bg-white rounded-2xl w-full max-w-md overflow-hidden my-auto shrink-0">
             <div className="p-6 border-b border-slate-100">
               <h2 className="text-xl font-bold text-slate-900">
                 {transactionType === 'in' ? 'Stok Masuk (Beli)' : 'Stok Keluar (Pakai)'}

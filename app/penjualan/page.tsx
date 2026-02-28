@@ -288,13 +288,14 @@ export default function Penjualan() {
 
       {/* POS Modal */}
       {showAddModal && (
-        <div className="fixed inset-0 bg-slate-900/50 flex items-center justify-center z-50 p-4 overflow-y-auto">
-          <div className="bg-white rounded-2xl w-full max-w-4xl overflow-hidden flex flex-col md:flex-row h-[90vh] md:h-[80vh]">
+        <div className="fixed inset-0 bg-slate-900/50 flex items-start md:items-center justify-center z-[100] p-4 overflow-y-auto">
+          <div className="bg-white rounded-2xl w-full max-w-4xl overflow-hidden flex flex-col md:flex-row h-auto md:h-[80vh] my-auto">
             
             {/* Product List (Left side) */}
-            <div className="flex-1 border-r border-slate-100 flex flex-col bg-slate-50">
-              <div className="p-4 border-b border-slate-200 bg-white">
+            <div className="flex-none h-[50vh] md:h-auto md:flex-1 border-b md:border-b-0 md:border-r border-slate-100 flex flex-col bg-slate-50">
+              <div className="p-4 border-b border-slate-200 bg-white flex justify-between items-center sticky top-0 z-10">
                 <h2 className="text-lg font-bold text-slate-900">Pilih Produk</h2>
+                <button onClick={() => setShowAddModal(false)} className="md:hidden text-slate-400 hover:text-slate-600 font-medium">Tutup</button>
               </div>
               <div className="p-4 overflow-y-auto flex-1 grid grid-cols-2 gap-3 content-start">
                 {state.products.map(product => (
@@ -340,13 +341,13 @@ export default function Penjualan() {
             </div>
 
             {/* Cart & Checkout (Right side) */}
-            <div className="w-full md:w-96 flex flex-col bg-white">
-              <div className="p-4 border-b border-slate-100 flex justify-between items-center">
+            <div className="w-full md:w-96 flex flex-col bg-white shrink-0 flex-none md:flex-auto">
+              <div className="p-4 border-b border-slate-100 flex justify-between items-center sticky top-0 bg-white z-10">
                 <h2 className="text-lg font-bold text-slate-900">Keranjang</h2>
-                <button onClick={() => setShowAddModal(false)} className="text-slate-400 hover:text-slate-600">Batal</button>
+                <button onClick={() => setShowAddModal(false)} className="hidden md:block text-slate-400 hover:text-slate-600 font-medium">Batal</button>
               </div>
               
-              <div className="flex-1 overflow-y-auto p-4 space-y-3">
+              <div className="flex-none md:flex-1 overflow-y-auto p-4 space-y-3 max-h-[40vh] md:max-h-none">
                 {cartItems.length === 0 ? (
                   <div className="h-full flex flex-col items-center justify-center text-slate-400">
                     <ShoppingCart className="w-12 h-12 mb-2 opacity-20" />
@@ -478,8 +479,8 @@ export default function Penjualan() {
 
       {/* Receipt Modal */}
       {showReceipt && (
-        <div className="fixed inset-0 bg-slate-900/50 flex items-center justify-center z-50 p-4 print:p-0 print:bg-transparent">
-          <div id="receipt-print-area" className="bg-white rounded-xl w-full max-w-sm overflow-hidden flex flex-col print:w-[58mm] print:shadow-none print:rounded-none">
+        <div className="fixed inset-0 bg-slate-900/50 flex items-start md:items-center justify-center z-[100] p-4 overflow-y-auto print:p-0 print:bg-transparent">
+          <div id="receipt-print-area" className="bg-white rounded-xl w-full max-w-sm overflow-hidden flex flex-col my-auto print:w-[58mm] print:shadow-none print:rounded-none">
             <div className="p-6 flex-1 text-center border-b border-slate-100 border-dashed print:p-2 print:border-none">
               <h2 className="text-xl font-bold text-slate-900 mb-1 print:text-sm">NastarKu</h2>
               <p className="text-xs text-slate-500 mb-6 print:mb-2 print:text-[10px]">Struk Penjualan</p>

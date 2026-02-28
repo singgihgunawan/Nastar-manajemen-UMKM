@@ -245,8 +245,8 @@ export default function Keuangan() {
 
       {/* Add Expense Modal */}
       {showAddModal && (
-        <div className="fixed inset-0 bg-slate-900/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl w-full max-w-md overflow-hidden">
+        <div className="fixed inset-0 bg-slate-900/50 flex items-start md:items-center justify-center z-[100] p-4 overflow-y-auto">
+          <div className="bg-white rounded-2xl w-full max-w-md overflow-hidden my-auto shrink-0">
             <div className="p-6 border-b border-slate-100">
               <h2 className="text-xl font-bold text-slate-900">{editingExpenseId ? 'Edit Pengeluaran' : 'Catat Pengeluaran Lain'}</h2>
             </div>
