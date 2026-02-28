@@ -266,8 +266,9 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
     }
     try {
       await signInWithPopup(auth, googleProvider);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Login failed:", error);
+      alert(`Gagal login: ${error.message || 'Terjadi kesalahan yang tidak diketahui'}`);
     }
   };
 
